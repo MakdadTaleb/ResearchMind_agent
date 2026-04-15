@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
 from api.schemas.auth import AuthRequest
 from utils.supabase_client import supabase
 from fastapi import HTTPException
