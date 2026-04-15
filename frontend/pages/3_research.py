@@ -75,11 +75,8 @@ if st.button("🚀 Generate Literature Review", use_container_width=True, type="
             
             elif event_type == "content":
                 full_report += content
-                # اعرض بدون markdown أثناء الـ streaming
                 report_placeholder.text(full_report + "▌")
 
             elif event_type == "done":
-                status_placeholder.empty()
-                report_placeholder.markdown("\n" + full_report)
                 st.success("✅ Literature Review completed and saved!")
                 break
