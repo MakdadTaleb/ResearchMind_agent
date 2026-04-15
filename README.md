@@ -1,4 +1,4 @@
-# 🔬 ResearchMind
+# ResearchMind
 
 An AI-powered multi-agent system that generates comprehensive Literature Reviews from any research topic — automatically searching, reading, analyzing, and writing academic content.
 
