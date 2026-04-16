@@ -16,7 +16,7 @@ async def reader_agent_node(state: ResearchState):
 
     messages = [SystemMessage(content=prompt)]
     response = await llm.ainvoke(messages)
-
+                                        
     if not response.content:
         return {
             "summaries": "",
