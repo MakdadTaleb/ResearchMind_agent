@@ -38,18 +38,18 @@ def stream_research(token: str, topic: str):
                 yield ("error", error)
                 return
             
-        for line in response.iter_lines():
-            if line:
-                decoded = line.decode("utf-8")
-                if decoded.startswith("data: "):
-                    chunk = decoded[6:]
-                    if chunk == "[DONE]":
-                        yield ("done", "")
-                    elif chunk.startswith("❌"):
-                        yield ("error", chunk)
-                    elif any(chunk.strip().startswith(e) for e in ["🔍", "📖", "🔬", "✍️"]):
-                        yield ("status", chunk.strip())
-                    else:
-                        yield ("content", chunk)
+            for line in response.iter_lines():
+                if line:
+                    decoded = line.decode("utf-8")
+                    if decoded.startswith("data: "):
+                        chunk = decoded[6:]
+                        if chunk == "[DONE]":
+                            yield ("done", "")
+                        elif chunk.startswith("❌"):
+                            yield ("error", chunk)
+                        elif any(chunk.strip().startswith(e) for e in ["🔍", "📖", "🔬", "✍️"]):
+                            yield ("status", chunk.strip())
+                        else:
+                            yield ("content", chunk)
     except Exception as e:
         yield ("error", str(e))
