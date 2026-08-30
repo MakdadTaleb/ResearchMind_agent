@@ -7,7 +7,7 @@ load_dotenv()
 
 # ---- shared LLM for all agents ----
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile", 
+    model=os.getenv("GROQ_MODEL"), 
     api_key=os.getenv("GROQ_API_KEY"),
     temperature=0.1
 )
