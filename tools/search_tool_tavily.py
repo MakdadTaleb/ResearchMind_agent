@@ -20,7 +20,7 @@ def search_research_papers(query: str) -> str:
         response = tavily.search(
             query=f"research paper academic {query}",
             search_depth="advanced",
-            max_results=3,
+            max_results=2,
             include_answer=True,
         )
 
